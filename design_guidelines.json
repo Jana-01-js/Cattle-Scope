@@ -1,0 +1,96 @@
+{
+  "theme": "light",
+  "archetype": "Organic & Earthy",
+  "colors": {
+    "background": "bg-stone-50",
+    "surface": "bg-white",
+    "primary": "bg-emerald-900",
+    "primary_hover": "bg-emerald-800",
+    "accent": "bg-amber-600",
+    "text_main": "text-stone-900",
+    "text_muted": "text-stone-500",
+    "success": "text-emerald-600",
+    "warning": "text-amber-500",
+    "danger": "text-rose-600",
+    "border": "border-stone-200",
+    "heatmap_low": "bg-blue-500/50",
+    "heatmap_mid": "bg-yellow-500/50",
+    "heatmap_high": "bg-red-500/50"
+  },
+  "typography": {
+    "headings_font": "Outfit",
+    "body_font": "IBM Plex Sans",
+    "h1": "text-4xl sm:text-5xl lg:text-6xl tracking-tighter font-semibold text-emerald-900",
+    "h2": "text-2xl sm:text-3xl lg:text-4xl tracking-tight font-medium text-stone-900",
+    "h3": "text-xl sm:text-2xl tracking-tight font-medium text-stone-900",
+    "h4": "text-lg sm:text-xl font-medium text-stone-900",
+    "body": "text-base leading-relaxed text-stone-600",
+    "label": "text-xs tracking-[0.2em] uppercase font-medium text-stone-500"
+  },
+  "spacing_and_layout": {
+    "container_padding": "p-6 md:p-8 lg:p-12",
+    "gap_large": "gap-12 lg:gap-24",
+    "gap_small": "gap-4 lg:gap-6",
+    "border_radius": "rounded-lg",
+    "dashboard_grid": "grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6",
+    "bento_grid": "grid grid-cols-1 md:grid-cols-8 lg:grid-cols-12 gap-8 lg:gap-12"
+  },
+  "components": {
+    "button_primary": "bg-emerald-900 text-white hover:bg-emerald-800 transition-colors duration-200 px-6 py-3 rounded-lg shadow-sm focus:ring-2 focus:ring-emerald-500 focus:ring-offset-2",
+    "button_secondary": "bg-white text-emerald-900 border border-stone-200 hover:bg-stone-50 transition-colors duration-200 px-6 py-3 rounded-lg",
+    "card": "bg-white border border-stone-200 rounded-lg shadow-sm p-6 transition-shadow hover:shadow-md",
+    "glass_header": "backdrop-blur-xl bg-white/80 border-b border-stone-200 sticky top-0 z-50",
+    "data_table": "w-full text-left border-collapse",
+    "upload_zone": "border-2 border-dashed border-stone-300 rounded-lg p-12 text-center hover:bg-emerald-50 hover:border-emerald-500 transition-all duration-200 cursor-pointer flex flex-col items-center justify-center gap-4",
+    "status_badge_healthy": "px-3 py-1 rounded-full bg-emerald-100 text-emerald-800 text-sm font-medium",
+    "status_badge_disease": "px-3 py-1 rounded-full bg-rose-100 text-rose-800 text-sm font-medium"
+  },
+  "pages": {
+    "landing": {
+      "strategy": "High visual impact using 'Tetris' bento grid. Big emotive imagery of cattle and tech. Grounded yet modern.",
+      "layout": "Hero section with wide imagery and overlay. Features in an asymmetrical bento grid. Use generous spacing (py-24)."
+    },
+    "dashboard": {
+      "strategy": "Control room grid. High density, data correlation, easy scanning. Minimalist animations.",
+      "layout": "Sidebar navigation (bg-stone-50). Main content area with top KPI summary cards (col-span-1), then a primary chart (col-span-2 or 3) and recent lists."
+    },
+    "prediction_result": {
+      "strategy": "EMR (Electronic Medical Record) style layout. Clinical clarity combined with AI transparency.",
+      "layout": "Two column bento layout. Left: Large uploaded image with Grad-CAM heatmap overlay (mix-blend-multiply). Right: Diagnostic results, breed identification, confidence bars, and treatment suggestions."
+    }
+  },
+  "image_urls": {
+    "hero_background": {
+      "url": "https://images.unsplash.com/photo-1500595046743-cd271d694d30",
+      "description": "Lush green field with cattle - use as a subtle background or large hero image"
+    },
+    "feature_ai_scan": {
+      "url": "https://images.pexels.com/photos/69170/pexels-photo-69170.jpeg",
+      "description": "Holstein cows standing in a dairy barn - use for demonstrating the AI scan feature"
+    },
+    "feature_vet_care": {
+      "url": "https://images.pexels.com/photos/16053487/pexels-photo-16053487.jpeg",
+      "description": "Farmer/Vet preparing syringe - use for treatment/vet suggestions feature"
+    },
+    "dashboard_placeholder_cow": {
+      "url": "https://images.unsplash.com/photo-1654119848146-6f698c3c5b43",
+      "description": "Close up of brown cow - use as a placeholder for uploaded image in prediction results"
+    }
+  },
+  "testing_attributes": {
+    "rule": "All interactive and key informational elements MUST include a data-testid attribute in kebab-case. Examples: data-testid='login-btn', data-testid='upload-dropzone', data-testid='prediction-disease-name'."
+  },
+  "instructions_to_main_agent": [
+    "Load 'Outfit' (weights 400,500,600) and 'IBM Plex Sans' (weights 400,500) from Google Fonts in index.css.",
+    "Use lucide-react for icons. Size them appropriately (w-5 h-5 for buttons, w-8 h-8 for empty states).",
+    "For the Landing page, implement the Tetris bento grid pattern with asymmetrical sizing to break the generic tech look.",
+    "For the Dashboard, use the Control Room grid pattern with tight gaps and strict alignment. Ensure cards stretch to fill height.",
+    "Ensure the header uses Crystal Glassmorphism (backdrop-blur-xl bg-white/80) with a 1px bottom border. DO NOT use a fully transparent header.",
+    "For the Grad-CAM heatmap overlay, use an absolute positioned div over the image. Use a radial gradient with mix-blend-multiply or opacity-50 to simulate heat over the affected area of the cattle.",
+    "Use Recharts for the analytics dashboard. Map chart colors to the primary (Emerald-900, Emerald-600) and accent (Amber-600) palettes.",
+    "Ensure all buttons, form inputs, links, and key diagnostic text elements have explicit data-testid attributes.",
+    "Do not use generic terms for data-testid. Be specific to the feature (e.g., 'history-table-row', 'export-pdf-btn').",
+    "For components, use pure HTML + Tailwind for marketing sections to allow creative freedom. Use Shadcn components for complex interactive logic like Data Tables, Dialogs, and Selects in the dashboard.",
+    "Use 'rounded-lg' globally for a soft but structured 'tactile' neumorphic feel on cards and buttons."
+  ]
+}
